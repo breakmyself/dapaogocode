@@ -1,159 +1,23 @@
-// package main
-//
-// import "fmt"
-//
-//	func main() {
-//		fmt.Print("Hello, World!\n" + "Dapao")
-//		var username, sex string
-//		username = "老张"
-//		sex = "男"
-//		fmt.Println(username, sex)
-//	}
-//
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"runtime"
-//
-// )
-//
-//	func main() {
-//		fmt.Printf("%s", runtime.Version())
-//
-// }
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//	"runtime"
-//
-// )
-//
-//	func main() {
-//		var goos string = runtime.GOOS
-//		fmt.Printf("The operating system is : %s\n", goos)
-//		path := os.Getenv("PATH")
-//		fmt.Printf("Path is %s\n", path)
-//
-//		//var username string
-//		//username = "哈喽"
-//		//a := 5.0
-//		//b := int(a)
-//		//const Pi = 3.1415926
-//		//fm.Println(Pi + 1)
-//		//
-//		//fm.Println("Hello,Go is Good")
-//		//fm.Println(username)
-//		//fm.Println(b)
-//		//const (
-//		//	a = iota
-//		//	b
-//		//	c
-//		//	d = 5
-//		//	e
-//		//)
-//
-// }
-// package main
-//
-// var a string
-//
-//	func main() {
-//		a = "G"
-//		print(a)
-//		f1()
-//	}
-//
-//	func f1() {
-//		a := "X"
-//		print(a)
-//		f2()
-//
-// }
-//
-//	func f2() {
-//		print(a)
-//	}
-//
-// package main
-//
-// import "fmt"
-//
-//	func main() {
-//		var a int
-//		var b int32
-//		var c int
-//		a = 15
-//		b = int32(a + a)
-//		c = int(b + 5)
-//		fmt.Println(a, b, c)
-//
-// }
-// package main
-//
-// import "fmt"
-//
-//	func main() {
-//		var n int16 = 34
-//		var m int32
-//		m = int32(n)
-//		fmt.Printf("32 bit int is:%d\n", m)
-//		fmt.Printf("16 bit is :%d\n", n)
-//
-// }
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"math/rand"
-//	"time"
-//
-// )
-//
-//	func main() {
-//		for i := 0; i < 10; i++ {
-//			a := rand.Int()
-//			fmt.Printf("%d /", a)
-//		}
-//		for i := 0; i < 5; i++ {
-//			r := rand.Int()
-//			fmt.Printf("%d /", r)
-//		}
-//		fmt.Println()
-//		timens := int64(time.Now().Nanosecond())
-//		rand.Seed(timens)
-//		for i := 0; i < 10; i++ {
-//			fmt.Printf("%2.2f /", 100*rand.Float32())
-//		}
-//	}
-//
-// package main
-//
-// import "fmt"
-//
-// type TZ int
-//
-//	func main() {
-//		var a, b TZ = 3, 4
-//		c := a + b
-//		fmt.Printf("c has the value:%d", c)
-//	}
 package main
-
 import "fmt"
-
-var ch int = '\u0041'
-var ch2 int = '\u03B2'
-var ch3 int = '\U00101234'
-
-func main() {
-	fmt.Printf("%d - %d - %d\n", ch, ch2, ch3) // integer
-	fmt.Printf("%c - %c - %c\n", ch, ch2, ch3) // character
-	fmt.Printf("%X - %X - %X\n", ch, ch2, ch3) // UTF-8 bytes
-	fmt.Printf("%U - %U - %U", ch, ch2, ch3)   // UTF-8 code point
+func  main() {
+	fmt.Println("Hello,World!")
 }
+
+###############################################################
+解释：
+如这段代码块根据上面的语法结构进行逐行解释
+
+第一行的 package main 是定义一个包名，必须在源文件中非注释的第一行指明这个文件属于哪个包，如 package main，可以代表一个独立执行的程序，每个GO应用程序都包含一个名为main的包
+
+第二行 import "fmt"，告诉GO编译器这个程序使用fmt包（的函数或者其他元素）fmt包实现了格式化IO，（输入/输出）的函数
+
+第三行 func main() 是程序开始执行的函数。main函数是每一个可执行程序必须包含的，一般来说都是在启动后，第一个执行的函数（如果有int（）函数，则会先执行该函数）
+
+第四行fmt.Printl() 是将字符串输出到控制台，并且在最后增加自动换行符 \n
+
+注意事项：
+
+{}是不能单独放在一行的，必须在函数后面，否则会报错
+
+当标识符（包括常量、变量、类型、函数名、结构字段等），以一个大写字母开头，如 Group1那么使用这种形式的标识符的对象就可以对外部的代码所使用（客户端程序需要先导入这个包），这被称为导出（像面向对象语言中的public），标识符如果以小写字母开头，则对包外是不可见的，但是他在整个包内是可见的
